@@ -200,6 +200,41 @@
             text-decoration: underline;
         }
 
+        /* Social Proof Badge */
+        .stats-badge {
+            background: linear-gradient(135deg, var(--primary-color), #6c5ce7);
+            color: white;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(78, 78, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-badge h2 {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
+        .stats-badge p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            margin-bottom: 0;
+            font-weight: 600;
+        }
+
+        .stats-badge::before {
+            content: "★";
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 100px;
+            color: rgba(255, 255, 255, 0.1);
+        }
+
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             .showcase-grid {
@@ -228,6 +263,11 @@
             <h2>Hakkında</h2>
             <p>Vergi Takvimi, vergi beyannameleri ve ödeme tarihlerini takip etmeyi kolaylaştıran modern bir mobil uygulamadır. Karmaşık vergi süreçlerini sadeleştirerek zamanınızı daha verimli kullanmanıza yardımcı olur.</p>
         </section>
+
+        <div class="stats-badge">
+            <h2>Güvenle Takip Edin</h2>
+            <p>✨ Yüzlerce mali müşavir vergi dönemlerini bizimle takip ediyor!</p>
+        </div>
         
         <section id="ozellikler">
             <h2>Özellikler</h2>
@@ -263,13 +303,6 @@
                     Google Play'den İndir
                 </a>
             </div>
-        </section>
-        
-        <section id="iletisim">
-            <h2>İletişim</h2>
-            <p>Soru, öneri ve destek talepleriniz için bize ulaşın:</p>
-            <p>📧 <a href="mailto:pandifapp@gmail.com" class="dev-link">pandifapp@gmail.com</a></p>
-            <p>🐦 <a href="https://x.com/serkanince_" target="_blank" class="dev-link">@serkanince_</a></p>
         </section>
 
         <footer>
