@@ -1,81 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Vergi Takvimi Privacy Policy</title>
+    <title>Vergi Takvimi - Gizlilik Politikası</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+        :root {
+            --primary-color: #4e4eff;
+            --text-color: #2d3436;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
         }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+
         .container {
             max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            padding: 40px;
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
         }
+
         h1, h2 {
-            color: rgb(78, 78, 255);
+            color: var(--primary-color);
+            margin-bottom: 20px;
         }
-        img {
+
+        h1 { font-size: 2rem; border-bottom: 2px solid var(--bg-color); padding-bottom: 10px; }
+        h2 { font-size: 1.5rem; margin-top: 30px; }
+
+        p { margin-bottom: 15px; }
+
+        ul { margin-bottom: 20px; padding-left: 20px; }
+        li { margin-bottom: 8px; }
+
+        .logo {
             display: block;
-            margin: 0 auto 20px;
+            margin: 0 auto 30px;
+            width: 100px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
         }
+
         a {
-            color: rgb(78, 78, 255);
+            color: var(--primary-color);
             text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 20px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="https://raw.githubusercontent.com/serkanince/vergi-takvimi-privacy/refs/heads/main/app-icon-rounded.png" alt="Vergi Takvimi Logo" width="200"/>
-        <h1>Vergi Takvimi Privacy Policy</h1>
-        <p>Welcome to Vergi Takvimi, your essential tax tracking application. This privacy policy outlines how we collect, use, and protect your information when you use our app. Developed by Serkan İnce.</p>
+        <a href="index.html"><img src="app-icon-rounded.png" alt="Vergi Takvimi Logo" class="logo"/></a>
+        <h1>Gizlilik Politikası</h1>
+        <p>Vergi Takvimi uygulamasına hoş geldiniz. Bu gizlilik politikası, uygulamamızı kullandığınızda bilgilerinizin nasıl toplandığını, kullanıldığını ve korunduğunu açıklamaktadır. Serkan İnce tarafından geliştirilmiştir.</p>
         
-        <h2>Information We Collect</h2>
-        <p>We collect information to provide better services to our users. This includes:</p>
+        <h2>Toplanan Bilgiler</h2>
+        <p>Kullanıcılarımıza daha iyi hizmet sunabilmek için şu bilgileri topluyoruz:</p>
         <ul>
-            <li>Personal information such as email address for authentication purposes.</li>
-            <li>Usage data to improve app functionality and user experience.</li>
+            <li>Kimlik doğrulama amaçlı e-posta adresi.</li>
+            <li>Uygulama işlevselliğini ve kullanıcı deneyimini iyileştirmek için kullanım verileri.</li>
         </ul>
-        <p>For a better experience, while using our Service, we may require you to provide us with certain personally identifiable information. The information that we request will be retained by us and used as described in this privacy policy.</p>
-        <p>The app does use third-party services that may collect information used to identify you. Below are links to the privacy policies of third-party service providers used by the app:</p>
+        <p>Hizmetimizi kullanırken, size daha iyi bir deneyim sunabilmek için belirli kişisel bilgileri sağlamanızı talep edebiliriz. Talep ettiğimiz bilgiler tarafımızca saklanacak ve bu gizlilik politikasında açıklandığı şekilde kullanılacaktır.</p>
+        <p>Uygulama, sizi tanımlamak için kullanılan bilgileri toplayabilecek üçüncü taraf hizmetleri kullanmaktadır:</p>
         <ul>
-            <li><a href="https://firebase.google.com/support/privacy/" target="_blank">Firebase Services</a></li>
-        </ul>
-        
-        <h2>Log Data</h2>
-        <p>We want to inform you that whenever you use our Service, in case of an error in the app, we collect data and information (through third-party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other statistics.</p>
-        
-        <h2>How We Use Your Information</h2>
-        <p>Your information is used to:</p>
-        <ul>
-            <li>Provide personalized tax tracking and notifications.</li>
-            <li>Improve our app and develop new features.</li>
-            <li>Communicate with you about updates and offers.</li>
+            <li><a href="https://firebase.google.com/support/privacy/" target="_blank">Firebase Hizmetleri</a></li>
         </ul>
         
-        <h2>Authentication Methods</h2>
-        <p>We support Email/Password for login and registration processes.</p>
+        <h2>Günlük Verileri (Log Data)</h2>
+        <p>Hizmetimizi her kullandığınızda, uygulamada bir hata oluşması durumunda, telefonunuzda Log Verileri adı verilen veri ve bilgileri (üçüncü taraf ürünler aracılığıyla) topladığımızı bildirmek isteriz. Bu Log Verileri, cihazınızın İnternet Protokolü (“IP”) adresi, cihaz adı, işletim sistemi sürümü, hizmetimizi kullanırken uygulamanın yapılandırması, hizmeti kullanım saatiniz ve tarihiniz ile diğer istatistikleri içerebilir.</p>
         
-        <h2>Data Security</h2>
-        <p>We are committed to protecting your data. We use industry-standard security measures to safeguard your information.</p>
+        <h2>Bilgilerin Kullanımı</h2>
+        <p>Bilgileriniz şu amaçlarla kullanılır:</p>
+        <ul>
+            <li>Kişiselleştirilmiş vergi takibi ve bildirimler sağlamak.</li>
+            <li>Uygulamamızı geliştirmek ve yeni özellikler sunmak.</li>
+            <li>Güncellemeler ve teklifler hakkında sizinle iletişim kurmak.</li>
+        </ul>
         
-        <h2>Third-Party Services</h2>
-        <p>We may share your information with third-party services for analytics and advertising purposes. These services are bound by confidentiality obligations.</p>
+        <h2>Kimlik Doğrulama Yöntemleri</h2>
+        <p>Giriş ve kayıt işlemleri için E-posta/Şifre yöntemlerini destekliyoruz.</p>
         
-        <h2>Changes to This Policy</h2>
-        <p>We may update this privacy policy from time to time. We will notify you of any changes by posting the new policy on this page.</p>
+        <h2>Veri Güvenliği</h2>
+        <p>Verilerinizi korumayı taahhüt ediyoruz. Bilgilerinizi korumak için endüstri standardı güvenlik önlemleri kullanıyoruz.</p>
         
-        <h2>Contact Us</h2>
-        <p>If you have any questions about this privacy policy, please contact us at <a href="mailto:pandifapp@gmail.com">pandifapp@gmail.com</a>.</p>
+        <h2>Değişiklikler</h2>
+        <p>Bu gizlilik politikasını zaman zaman güncelleyebiliriz. Herhangi bir değişikliği bu sayfada yeni politikayı yayınlayarak size bildireceğiz.</p>
+        
+        <h2>İletişim</h2>
+        <p>Bu gizlilik politikası hakkında sorularınız varsa, lütfen <a href="mailto:pandifapp@gmail.com">pandifapp@gmail.com</a> adresinden bizimle iletişime geçin.</p>
+
+        <div class="back-link">
+            <a href="index.html">← Ana Sayfaya Dön</a>
+        </div>
     </div>
 </body>
 </html>

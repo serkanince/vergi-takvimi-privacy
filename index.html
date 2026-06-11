@@ -3,98 +3,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vergi Takvimi - Vergi Takip Uygulamanız</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Vergi Takvimi - Kolay Vergi Takibi ve Hesaplama</title>
+    <meta name="description" content="Vergi Takvimi ile vergi beyannameleri, ödeme tarihleri ve KDV hesaplamalarını kolayca takip edin. iOS ve Android için ücretsiz indirin.">
+    <meta name="keywords" content="vergi takvimi, vergi takibi, vergi hesaplama, kdv hesapla, vergi beyannamesi, mali takvim">
+    <meta name="author" content="Serkan İnce">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vergitakvimi.app/">
+    <meta property="og:title" content="Vergi Takvimi - Kolay Vergi Takibi">
+    <meta property="og:description" content="Vergi beyannameleri ve ödeme tarihlerini kaçırmayın. Vergi Takvimi cebinizde!">
+    <meta property="og:image" content="https://raw.githubusercontent.com/serkanince/vergi-takvimi-privacy/refs/heads/main/app-icon-rounded.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://vergitakvimi.app/">
+    <meta property="twitter:title" content="Vergi Takvimi - Kolay Vergi Takibi">
+    <meta property="twitter:description" content="Vergi beyannameleri ve ödeme tarihlerini kaçırmayın. Vergi Takvimi cebinizde!">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/serkanince/vergi-takvimi-privacy/refs/heads/main/app-icon-rounded.png">
+
+    <link rel="icon" type="image/png" href="app-icon-rounded.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+        :root {
+            --primary-color: #4e4eff;
+            --primary-hover: #3b3bff;
+            --text-color: #2d3436;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
         }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
         .container {
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        h1, h2 {
-            color: rgb(78, 78, 255);
-        }
-        nav {
-            background-color: rgb(78, 78, 255);
-            color: #fff;
-            padding: 10px;
+
+        header {
+            background-color: var(--card-bg);
+            padding: 40px 0;
             text-align: center;
-        }
-        nav a {
-            color: #fff;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-        section {
+            box-shadow: var(--shadow);
             margin-bottom: 40px;
         }
-        img {
-            display: block;
-            margin: 0 auto 20px;
+
+        .logo {
+            width: 120px;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: var(--text-color);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 2.5rem; text-align: center; }
+
+        p { margin-bottom: 15px; font-size: 1.1rem; color: #636e72; }
+
+        ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Showcase Styling */
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .showcase-item img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .showcase-item img:hover {
+            transform: translateY(-5px);
+        }
+
+        /* App Buttons */
+        .download-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            text-align: center;
+            min-width: 200px;
+            justify-content: center;
+        }
+
+        .btn-apple {
+            background-color: #000;
+            color: white;
+        }
+
+        .btn-google {
+            background-color: #34a853;
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 0;
+            color: #636e72;
+        }
+
+        .dev-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .dev-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .showcase-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <img src="app-icon-rounded.png" alt="Vergi Takvimi Logo" class="logo">
+            <h1>Vergi Takvimi</h1>
+            <nav>
+                <a href="#hakkinda">Hakkında</a>
+                <a href="#ozellikler">Özellikler</a>
+                <a href="#showcase">Görünüm</a>
+                <a href="#indir">İndir</a>
+                <a href="privacy.html" target="_blank">Gizlilik</a>
+            </nav>
+        </div>
+    </header>
+
     <div class="container">
-        <img src="https://raw.githubusercontent.com/serkanince/vergi-takvimi-privacy/refs/heads/main/app-icon-rounded.png" alt="Vergi Takvimi Logo" width="200"/>
-        <nav>
-            <a href="#hakkinda">Hakkında</a>
-            <a href="#ozellikler">Özellikler</a>
-            <a href="#nasil-calisir">Nasıl Çalışır</a>
-            <a href="#indir">Vergi Takvimi'ni İndir</a>
-            <a href="#iletisim">İletişim</a>
-            <a href="privacy.html" target="_blank">Gizlilik Politikası</a>
-        </nav>
         <section id="hakkinda">
-            <h1>Vergi Takvimi Hakkında</h1>
-            <p>Vergi Takvimi, vergi beyannameleri ve ödeme tarihlerini takip etmeyi kolaylaştıran bir mobil uygulamadır. Flutter teknolojisi ile geliştirilmiş olup, hem iOS hem de Android platformlarında sorunsuz bir deneyim sunar.</p>
+            <h2>Hakkında</h2>
+            <p>Vergi Takvimi, vergi beyannameleri ve ödeme tarihlerini takip etmeyi kolaylaştıran modern bir mobil uygulamadır. Karmaşık vergi süreçlerini sadeleştirerek zamanınızı daha verimli kullanmanıza yardımcı olur.</p>
         </section>
         
         <section id="ozellikler">
             <h2>Özellikler</h2>
             <ul>
-                <li>Vergi takvimini görüntüleme ve filtreleme.</li>
-                <li>Yaklaşan vergi tarihlerine yönelik bildirimler.</li>
-                <li>KDV gibi vergi hesaplayıcı.</li>
-                <li>Mükellef yönetimi.</li>
-                <li>Çevrimdışı destek.</li>
-                <li>Türkçe ve İngilizce çoklu dil desteği.</li>
+                <li>Güncel vergi takvimini anlık takip etme.</li>
+                <li>Yaklaşan son ödeme tarihleri için hatırlatıcı bildirimler.</li>
+                <li>Pratik KDV ve vergi hesaplama araçları.</li>
+                <li>Çoklu mükellef yönetimi ile tüm işlerinizi tek yerden yönetin.</li>
+                <li>İnternet bağlantısı olmasa bile verilere erişim.</li>
+                <li>Modern ve kullanıcı dostu arayüz.</li>
             </ul>
         </section>
-        
-        <section id="nasil-calisir">
-            <h2>Nasıl Çalışır</h2>
-            <p>Vergi Takvimi, kullanıcıların vergi beyannamelerini ve ödeme tarihlerini kolayca takip etmelerini sağlar. Uygulama, Firebase entegrasyonu ile güvenli kimlik doğrulama ve veri yönetimi sunar.</p>
+
+        <section id="showcase">
+            <h2>Uygulama İçi Görünüm</h2>
+            <div class="showcase-grid">
+                <div class="showcase-item"><img src="showcase/1.png" alt="Vergi Takvimi Ekran Görüntüsü 1"></div>
+                <div class="showcase-item"><img src="showcase/2.png" alt="Vergi Takvimi Ekran Görüntüsü 2"></div>
+                <div class="showcase-item"><img src="showcase/3.png" alt="Vergi Takvimi Ekran Görüntüsü 3"></div>
+                <div class="showcase-item"><img src="showcase/4.png" alt="Vergi Takvimi Ekran Görüntüsü 4"></div>
+                <div class="showcase-item"><img src="showcase/5.png" alt="Vergi Takvimi Ekran Görüntüsü 5"></div>
+            </div>
         </section>
         
         <section id="indir">
             <h2>Vergi Takvimi'ni İndir</h2>
-            <div>
-                <h3>App Store</h3>
-                <p>Vergi Takvimi'ni App Store'dan indirerek vergi takibinizi kolaylaştırın.</p>
-                <a href="https://apps.apple.com/tr/app/vergi-takvimi/id6738589279?l=tr" target="_blank">App Store'dan İndir</a>
-            </div>
-            <div>
-                <h3>Google Play</h3>
-                <p>Vergi Takvimi'ni Google Play'den indirerek vergi takibinizi kolaylaştırın.</p>
-                <a href="https://play.google.com/store/apps/details?id=com.vergitakvimi.app" target="_blank">Google Play'den İndir</a>
+            <p>Hemen ücretsiz indirin ve vergi süreçlerinizi yönetmeye başlayın.</p>
+            <div class="download-container">
+                <a href="https://apps.apple.com/tr/app/vergi-takvimi/id6738589279?l=tr" target="_blank" class="btn btn-apple">
+                    App Store'dan İndir
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.vergitakvimi.app" target="_blank" class="btn btn-google">
+                    Google Play'den İndir
+                </a>
             </div>
         </section>
         
         <section id="iletisim">
             <h2>İletişim</h2>
-            <p>Daha fazla bilgi için geliştiriciye <a href="mailto:pandifapp@gmail.com">pandifapp@gmail.com</a> adresinden ulaşabilirsiniz.</p>
-            <p>Geliştiriciyi <a href="https://x.com/serkanince_" target="_blank">X (Eski Twitter)</a> üzerinden takip edin.</p>
+            <p>Soru, öneri ve destek talepleriniz için bize ulaşın:</p>
+            <p>📧 <a href="mailto:pandifapp@gmail.com" class="dev-link">pandifapp@gmail.com</a></p>
+            <p>🐦 <a href="https://x.com/serkanince_" target="_blank" class="dev-link">@serkanince_</a></p>
         </section>
+
+        <footer>
+            <p>Geliştirici: <strong>Serkan İnce</strong></p>
+            <p>Beni LinkedIn'de takip edin: <a href="https://www.linkedin.com/in/serkan-ince/" target="_blank" class="dev-link">linkedin.com/in/serkan-ince/</a></p>
+            <p>&copy; 2024 Vergi Takvimi. Tüm hakları saklıdır.</p>
+        </footer>
     </div>
 </body>
 </html>
